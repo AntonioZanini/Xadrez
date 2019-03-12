@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            section#tabuleiro {
+                border: 5px solid black;
+                display: inline-block;
+                width: auto;
+                padding: 3px 0 0 3px;
+                margin: 10px 10px;
+            }
+            div {
+                height: 90px;
+                width: 90px;
+                display: inline-block;
+                border: 5px solid black;
+                margin: 0px;
+            }
+            .brancas{
+                background-color: white;
+            }
+
+            .pretas{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="tabuleiro">
+            @{
+                int inverte_col = 0;
+                for (var i = 1; i <= 64; i++)
+                {
+
+                    if (i % 2 == inverte_col)
+                    {
+                        <div class="pretas"></div>
+                    }
+                    else
+                    {
+                        <div class="brancas"></div>
+                    }
+                    if (i % 8 == 0)
+                    {
+                        inverte_col = (inverte_col == 0 ? 1 : 0);
+                        <br />
+                    }
+                }
+            }
+        </section>
+    </body>
+</html>
